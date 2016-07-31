@@ -1,6 +1,6 @@
 _ = require "underscore"
 hintFiles = require("./lib-js/hint")
-{argv, help} = require("optimist")
+{argv, help} = require("yargs")
   .usage('$0 [options] filename.coffee ...')
   .options
     options:

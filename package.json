@@ -1,11 +1,11 @@
 {
   "name": "coffee-jshint",
-  "version": "0.2.3",
+  "version": "0.3.3",
   "description": "Checks CoffeeScript source for errors using JSHint",
   "engines": {
     "node": ">=0.8.x"
   },
-  "repository": "git://github.com/Clever/coffee-jshint.git",
+  "repository": "https://github.com/samme/coffee-jshint.git",
   "bin": {
     "coffee-jshint": "./cli.js"
   },
@@ -15,16 +15,14 @@
   "license": "Apache-2.0",
   "dependencies": {
     "jshint": "~2.9.2",
-    "optimist": "~0.6.1",
+    "yargs": "~4.8.1",
     "underscore": "~1.8.3"
   },
   "peerDependencies": {
     "coffee-script": ">= 1.6 < 2"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.0"
+    "coffee-script": "*"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  }
+  "private": true
 }
