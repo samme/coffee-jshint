@@ -4,20 +4,31 @@ _ = require 'underscore'
 jshint = require('jshint').JSHINT
 
 defaultOptions = [
+             # ADD warnings
+             # http://jshint.com/docs/options/#enforcing-options
   'undef'
-  # options to relax for cs
-  'eqnull'
-  'expr'
-  'shadow'
-  'sub'
-  'multistr'
+             # REMOVE warnings
+             # http://jshint.com/docs/options/#relaxing-options
+  'eqnull'   # Normal CS output
+  'expr'     # Normal CS output?
+  'shadow'   # Normal CS output; triggered by `function ClassName()`
+             # REMOVE more warnings
+             # https://github.com/jshint/jshint/blob/master/src/messages.js
+  '-W018'    # "Confusing use of '!'"
+             # Triggered by `switch !(false)`
+  '-W040'    # 'Possible strict violation'
+             # Triggered by `this.constructor = child;`?
+  '-W055'    # 'A constructor name should start with an uppercase letter'
+             # Triggered by `new ctor` etc.?
+  '-W058'    # 'Missing '()' invoking a constructor.'
+             # Cf. coffeelint `non_empty_constructor_needs_parens`
+  '-W093'    # 'Did you mean to return a conditional instead of an assignment?'
 ]
 errorsToSkip = [
-  "Did you mean to return a conditional instead of an assignment?"
-  "Confusing use of '!'."
-  "Wrap the /regexp/ literal in parens to disambiguate the slash operator."
-  "Creating global 'for' variable. Should be 'for (var"
-  "Missing '()' invoking a constructor." # covered by coffeelint rule non_empty_constructor_needs_parens
+  "Confusing use of '!'." # W018? Normal CS output
+  # "Wrap the /regexp/ literal in parens to disambiguate the slash operator."
+  # Obsolete?
+  # Cf. E014 "A regular expression literal can be confused with '/='."
 ]
 
 # If log is true, prints out results after processing each file
