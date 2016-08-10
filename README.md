@@ -20,11 +20,11 @@ JSHint takes [a bunch of options](http://www.jshint.com/docs/#options) that tell
 - `eqnull`: suppresses warnings about `== null`, which CoffeeScript uses in its generated JS
 - `expr` suppresses warnings about expressions in unexpected positions, which can only occur in generated JS when the CoffeeScript compiler does it on purpose
 - `shadow` suppresses warnings about variable shadowing, which is fine since CoffeeScript has sane scoping rules and generates safely scoped JS that uses shadowed variables
-- `-W018`: suppresses "Confusing use of '!'" (normal in compiled `switch` statements)
-- `-W040`: suppresses 'Possible strict violation' (normal in compiled `Class`?)
-- '-W055': suppresses 'A constructor name should start with an uppercase letter' (normal in compiled `Class`?)
-- '-W058': suppresses 'Missing '()' invoking a constructor' (my preference I guess)
-- '-W093': suppresses 'Did you mean to return a conditional instead of an assignment?'
+- `-W018`: suppresses "Confusing use of '!'", which is normal in compiled `switch` statements
+- `-W040`: suppresses 'Possible strict violation', which is normal in compiled `Class` statements (?)
+- `-W055`: suppresses 'A constructor name should start with an uppercase letter', which is normal in compiled `Class` statements (?)
+- `-W058`: suppresses 'Missing '()' invoking a constructor'
+- `-W093`: suppresses 'Did you mean to return a conditional instead of an assignment?'
 
 To turn on more options, you can use the `--options` or `-o` flag:
 
